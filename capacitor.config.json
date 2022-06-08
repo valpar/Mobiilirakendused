@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "to-do-list-rif20",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

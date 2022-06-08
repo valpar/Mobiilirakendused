@@ -1,0 +1,7 @@
+{
+  "name": "to-do-list-rif20",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

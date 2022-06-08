@@ -10,9 +10,9 @@ import {
   setupIonicReact,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, list, square } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
+import { checkbox, ellipse, list, pencil, square } from 'ionicons/icons';
+import Todo from './pages/Todo';
+import Notes from './pages/Notes';
 import Tab3 from './pages/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
@@ -41,27 +41,27 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path='/tab1'>
-            <Tab1 />
+          <Route exact path='/Todo'>
+            <Todo />
           </Route>
-          <Route exact path='/tab2'>
-            <Tab2 />
+          <Route exact path='/Notes'>
+            <Notes />
           </Route>
           <Route path='/tab3'>
             <Tab3 />
           </Route>
           <Route exact path='/'>
-            <Redirect to='/tab1' />
+            <Redirect to='/Todo' />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot='bottom'>
-          <IonTabButton tab='tab1' href='/tab1'>
-            <IonIcon icon={list} />
+          <IonTabButton tab='Todo' href='/Todo'>
+            <IonIcon icon={checkbox} />
             <IonLabel>To-do</IonLabel>
           </IonTabButton>
-          <IonTabButton tab='tab2' href='/tab2'>
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab='Notes' href='/Notes'>
+            <IonIcon icon={list} />
+            <IonLabel>Notes</IonLabel>
           </IonTabButton>
           <IonTabButton tab='tab3' href='/tab3'>
             <IonIcon icon={square} />

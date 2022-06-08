@@ -11,6 +11,7 @@ import {
   IonLabel,
   IonItemDivider,
 } from '@ionic/react';
+import './Todo.css';
 
 const checkboxList = [
   { val: 'Voodi tegemine', isChecked: false },
@@ -28,7 +29,7 @@ const checkboxList = [
   { val: 'Magama minek', isChecked: false },
 ];
 
-export const Tab1: React.FC = () => {
+export const Todo: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -55,4 +56,4 @@ export const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default Todo;

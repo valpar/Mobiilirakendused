@@ -13,7 +13,6 @@ import { IonReactRouter } from '@ionic/react-router';
 import { checkbox, ellipse, list, pencil, square } from 'ionicons/icons';
 import Todo from './pages/Todo';
 import Notes from './pages/Notes';
-import Tab3 from './pages/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,42 +32,41 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import TodoContextProvider from './data/TodoContextProvider';
+import NoteDetails from './pages/NoteDetails';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+      <TodoContextProvider>
       <IonTabs>
-        <IonRouterOutlet>
+        <IonRouterOutlet id="main">
           <Route exact path='/Todo'>
             <Todo />
           </Route>
-          <Route exact path='/Notes'>
+          <Route exact path='/notes'>
             <Notes />
           </Route>
-          <Route path='/tab3'>
-            <Tab3 />
+          <Route path="/notes/:noteId">
+            <NoteDetails />
           </Route>
-          <Route exact path='/'>
-            <Redirect to='/Todo' />
-          </Route>
+          <Redirect path="" to="/Todo" exact />
         </IonRouterOutlet>
+
         <IonTabBar slot='bottom'>
           <IonTabButton tab='Todo' href='/Todo'>
             <IonIcon icon={checkbox} />
             <IonLabel>To-do</IonLabel>
           </IonTabButton>
-          <IonTabButton tab='Notes' href='/Notes'>
+          <IonTabButton tab='Notes' href='/notes'>
             <IonIcon icon={list} />
             <IonLabel>Notes</IonLabel>
           </IonTabButton>
-          <IonTabButton tab='tab3' href='/tab3'>
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
-          </IonTabButton>
         </IonTabBar>
       </IonTabs>
+      </TodoContextProvider>
     </IonReactRouter>
   </IonApp>
 );

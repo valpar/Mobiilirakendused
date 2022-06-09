@@ -18,8 +18,7 @@ const Items: React.FC<{
       <IonCardHeader>
         <IonCardTitle>{props.title}</IonCardTitle>
         <IonCardSubtitle>
-          Description{' '}
-          {props.description.toString}
+          {props.description}
         </IonCardSubtitle>
       </IonCardHeader>
       <IonCardContent>
@@ -27,7 +26,7 @@ const Items: React.FC<{
           <IonButton
             fill="clear"
             color="secondary"
-            routerLink={`/courses/${props.id}`}
+            routerLink={`/notes/${props.id}`}
           >View description</IonButton>
         </div>
       </IonCardContent>

@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 
 import TodoContext from '../data/todo-context';
 
-//import { COURSE_DATA } from './Courses';
-
 const TodoDetails: React.FC = () => {
   const selectedTodoId = useParams<{ noteId: string }>().noteId;
   const todosCtx = useContext(TodoContext);
